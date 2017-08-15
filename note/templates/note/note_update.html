@@ -1,0 +1,19 @@
+{% load widget_tweaks %}
+
+{% block content %}
+	<form action="{% url 'note_update' pk=object.pk %}" method="post">
+		{% csrf_token %}
+		{{ form.media }}
+		<div class="fm-title">
+		{{form.title|add_class:'form-title'}}
+		<hr>
+		</div>
+		<div class="fm-content">
+		{{form.content|add_class:'form-content'}}
+		</div>
+		<div class="fm-time-updated">
+		Modified at: {{form.time_updated|add_class:'form-time-updated'}}
+		</div>
+	<input type="submit" value="update">
+	</form>
+{% endblock %} 

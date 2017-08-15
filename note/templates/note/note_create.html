@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block body %}
+	<script>
+		function confirmCancel() {
+			var ans = confirm("Are you sure to exit? (any unsaved contents will be discarded)");
+			if (ans == true) {
+				location.href="/";
+			}
+		}
+	</script>
+
+	<form action="" method="post">
+		{% csrf_token %}
+		{{ form.media }}
+		<div class="fm-title">
+		{{form.title|add_class:'form-title'|attr:"placeholder:The Note Title Here"}}
+		<button class="btn btn-info" tabindex="-1" onclick="confirmCancel();">Cancel</a>
+		</div>
+		<div class="fm-content">
+		{{form.content|add_class:'form-content'|attr:"placeholder:Whatever you want to put..."}}
+		</div>
+	<button class="btn btn-primary" type="submit">Create</button>
+	</form>
+{% endblock %} 

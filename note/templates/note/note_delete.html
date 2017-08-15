@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+<form method="post">
+	{% csrf_token %}
+	<h2>Are you sure you want to delete the note {{note.title}}?</h2>
+	<button type="button" class="btn btn-warning"onclick="location.href='/';">Cancel</button>
+	<button type="submit" class="btn btn-danger">Delete</button>
+</form>
+{% endblock %}

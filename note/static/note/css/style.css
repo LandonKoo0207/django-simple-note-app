@@ -1,0 +1,164 @@
+
+h2
+{
+    font-weight: 300;
+
+    color: #757575;
+}
+
+div.col-sm-1
+{
+    height: 100vh;
+    width: 82px;
+
+    background-color: #F1F1F1;
+}
+
+div.col-sm-1 > button
+{
+    margin-top: 20px;
+    
+    border-width: 0;
+    background-color: #F1F1F1;
+}
+
+div.col-sm-1 > button > a > img
+{
+    margin-top: 20px;
+    width: 45px;
+    
+    background-color: #F1F1F1;
+}
+
+div.col-sm-4
+{
+    height: 100vh;
+    width: 300px;
+
+    border-right: 1px solid #d3d3d3;
+    border-left: 1px solid #d3d3d3;
+
+    overflow-y: scroll;
+}
+
+div.col-sm-4 > div.row > div.each-note-list 
+{
+    height: 151px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 3px solid #FFFFFF;
+}
+
+div.col-sm-4 > div.row > div.each-note-list > p
+{
+    height: 151px;
+
+    padding-top: 10px;
+
+    /*margin-top: 7px;*/
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 7px;
+    
+    text-align: left;
+
+    color: #505050;
+
+    overflow-wrap: break-word;
+}
+
+div.col-sm-4 > div.row > div.each-note-list > p > .btn
+{
+    float: right;
+
+    margin-right: 5px;
+}
+div.col-sm-4 > div.row > div.each-note-list:hover
+{
+    /*background-color: #259e9e;*/
+    background-color: #54BF9C;
+    /*color: #FFFFFF;*/
+}
+
+div.col-sm-4 > div.row > div.each-note-list > p:hover
+{
+    color: #FFFFFF;
+}
+
+div.col-sm-4 > div.row > div.each-note-list > p > font.note-list-title
+{
+    font-family: 'Times New Roman';
+    font-size: 12pt;
+}
+
+div.col-sm-4 > div.row > div.each-note-list > p > font.note-list-content
+{
+    font-family: 'Arial';
+    font-size: 11pt;
+}
+
+
+img.create
+{
+    content: url('/static/note/img/add.png');
+    background-color: #EBEBEB;
+}
+
+img.create:hover
+{
+    content: url('/static/note/img/add_hover.png');
+    background-color: #EBEBEB;
+}
+
+div.col-sm-4 > div.row > div.each-note-border
+{
+    margin-left: 5px;
+    margin-right: 5px;
+    border-width: 1px;
+    border-bottom: 1px solid #d1d1d1;
+    height: 1px;
+}
+
+input.form-title
+{
+    width: 500px;
+    height: 50px;
+
+    border-width: 0;
+}
+
+textarea.form-content
+{
+    width: 100%;
+    height: 80%;
+
+    border-width: 0;
+}
+
+div.fm-title
+{
+    font-size: 22pt;
+    font-family: "Times New Roman";
+    color: #54BF9C;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+div.fm-time-updated
+{
+    font-style: italic;
+}
+
+input.form-time-updated
+{
+    margin-top: 5px;
+    margin-bottom: 15px;
+
+    border-width: 0;
+}
+
+hr 
+{
+    margin-top: 5px;
+}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} 
+    UT Note
+{% endblock %}
+{% block body %}
+<script>
+    var prev_id
+    var prev_border
+    
+    function prevId(id) {
+        prev_id = id;
+    }
+
+    function viewNote(id) {
+        if ("div-note"+id != prev_id) {
+            $("#note-content").load("/update/"+id);
+            prev_border = document.getElementById("div-note"+id).style.border;
+            markCurrentNote(id)
+            if (document.getElementById(prev_id).style.color != null) {
+                document.getElementById(prev_id).style.border=prev_border
+            }
+            prevId("div-note"+id);
+        }
+    }
+
+    function markCurrentNote(id) {
+        document.getElementById("div-note"+id).style.border="3px solid #D1D1D1"
+    }
+
+    function delNote(id) {
+        location.href="/delete/"+id
+    }
+</script>
+    <div class="col-sm-1">
+        <button title="Create a new note">
+            <a href="/create/"><img class="create" src="{% static 'note/img/add.png' %}"/></a>
+        </button>
+    </div>
+    <div class="col-sm-4">
+        <h2> NOTES </h2>
+        <div class="row">
+        {% for note in object_list %}
+            <div class="each-note-list" id="div-note{{note.id}}">
+                <p id="p{{note.id}}" onClick="viewNote({{note.id}})">
+                <font class="note-list-title">
+                {{ note.title }}
+                </font>
+                <input type="image" src="{% static 'note/img/delete.png' %}" onclick="delNote({{note.id}})" width="20" align="right" title="Delete this note"></input>
+                <br/>
+                <br /><font class="note-list-content">
+                {{ note.content_str }}</font>
+                </p>
+            </div>
+            <div class="each-note-border">
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div id="note-content" class="col-sm-7">
+        {% block content %}
+        {% endblock %}
+    </div>
+<script>
+    prevId("p"+{{object_list.0.id}})
+    viewNote({{object_list.0.id}})
+    markCurrentNote({{object_list.0.id}})
+</script>
+{% endblock %}
